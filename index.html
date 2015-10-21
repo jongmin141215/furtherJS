@@ -12,7 +12,7 @@
     <script src="searchFactory.js"></script>
   </head>
 
-  <body ng-controller="GitUserSearchController as searchCtrl">
+  <body class="container" ng-controller="GitUserSearchController as searchCtrl">
     <div>
       <form class="form-horizontal">
         <input type="text" ng-model="searchCtrl.searchTerm" ng-change="searchCtrl.doSearch()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0} }">
@@ -21,7 +21,7 @@
       {{searchCtrl.searchTerm}}
       <ul class="list-group">
         <li ng-repeat="user in searchCtrl.searchResult.items">
-          <img ng-src="{{user.avatar_url}}&s=50">
+          <img ng-src="{{user.avatar_url}}" style="width: 100px; height: 100px">
           <a ng-href="{{user.html_url}}">{{user.login}}</a>
         </li>
       </ul>
